@@ -3,3 +3,23 @@
 *.iml
 
 test.txt
+target/
+
+*/target/
+
+spring-boot-security/target/
+spring-cloud-service/target/
+spring-compute-service/target/
+spring-compute-service2/target/
+spring-feign-service/target/
+spring-ribbon-service/target/
+spring-cloud-service-ha/target/
+spring-cloud-config-server/target/
+spring-cloud-config-client/target/
+spring-cloud-bus-amqp/target/
+spring-cloud-bus-kafka/target/
+spring-cloud-service3/target/
+spring-cloud-sleuth/target/
+spring-cloud-zipkin/target/
+
+

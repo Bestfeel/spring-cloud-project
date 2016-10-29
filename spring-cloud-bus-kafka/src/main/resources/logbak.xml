@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds" debug="false">
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <property name="LOG_HOME" value="logs"/>
+    <!-- 输出日志到控制台 -->
+    <appender
+            name="STDOUT"
+            class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 可让每天产生一个日志文件，最多 30 个，自动回滚 -->
+    <appender name="rollingFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>spring.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>%date{yyyy-MMM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <root level="ERROR">
+        <!--控制台输出-->
+        <appender-ref ref="STDOUT"/>
+        <!--<appender-ref ref="rollingFile"/>-->
+    </root>
+    <!--设置我们项目的日志级别为INFO-->
+    <logger name="com.gizwits" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT"/>
+        <!--<appender-ref ref="rollingFile"/>-->
+    </logger>
+    <!--设置 apache 的日志为ERROR-->
+    <logger name="org.apache">
+        <level value="ERROR"/>
+    </logger>
+    <logger name="com.netflix.discovery.TimedSupervisorTask">
+        <level value="ERROR"/>
+    </logger>
+
+    <!--<logger name="com.netflix.servo.jmx" level="ERROR" additivity="false">-->
+    <!--<appender-ref ref="STDOUT"/>-->
+    <!--</logger>-->
+    <logger name="com.netflix.servo.jmx" level="ERROR"/>
+
+    <root level="ERROR">
+        <!--控制台输出-->
+        <appender-ref ref="STDOUT"/>
+        <!--<appender-ref ref="rollingFile"/>-->
+    </root>
+</configuration>

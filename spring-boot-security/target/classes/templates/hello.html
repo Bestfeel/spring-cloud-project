@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h1> hello world</h1>
+
+
+    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
+    <th:textarea></th:textarea>
+    <h1>向 队列发送消息：</h1>
+
+    <form th:action="@{/send}" method="post" id="myform">
+        <div><label> quene name : <input type="text" name="quenaName" th:value="spring-amqp-rabbitmq"/> </label></div>
+    </form>
+
+    <textarea rows="3" cols="20" name="message" form="myform"></textarea>
+
+    <div><input type="submit" value="发送" form="myform"/></div>
+
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="注销"/>
+    </form>
+
+
+</div>
+</body>
+</html>

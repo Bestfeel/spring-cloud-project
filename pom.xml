@@ -76,6 +76,25 @@
             <version>${spring-boot.version}</version>
         </dependency>
 
+        <!--超媒体-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
+
+
+        <!--端点信息图形化工具-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>hal-browser</artifactId>
+        </dependency>
+
+        <!-- 文档  http://localhost:8022/docs/-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator-docs</artifactId>
+        </dependency>
+
         <!--swagger2-->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -92,6 +111,19 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
+
+
+        <!--<dependency>-->
+        <!--<groupId>de.codecentric</groupId>-->
+        <!--<artifactId>spring-boot-admin-server</artifactId>-->
+        <!--<version>1.4.3</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>de.codecentric</groupId>-->
+        <!--<artifactId>spring-boot-admin-server-ui</artifactId>-->
+        <!--<version>1.4.3</version>-->
+        <!--</dependency>-->
+
 
         <!--<dependency>-->
         <!--<groupId>org.springframework.boot</groupId>-->

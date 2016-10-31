@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
+ * http://localhost:8022/actuator
+ * http://localhost:8022/docs/
+ * <p>
  * Created by feel on 2016/10/23.
  */
 @EnableDiscoveryClient

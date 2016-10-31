@@ -63,7 +63,7 @@ public class SwaggerConfig {
                 "文档的详细说",//小标题
                 "0.1",//版本
                 "NO terms of service",
-                "fye@gizwits.coom",//作者
+                "fye@gizwits.com",//作者
                 "The Apache License, Version 2.0",//链接显示文字
                 "www.gizwits.com"//网站链接
         );

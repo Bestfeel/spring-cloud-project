@@ -21,5 +21,9 @@ spring-cloud-bus-kafka/target/
 spring-cloud-service3/target/
 spring-cloud-sleuth/target/
 spring-cloud-zipkin/target/
+spring-cloud-hystrixDashboard/target/
+spring-cloud-turbine/target/
+spring-cloud-api-gateway/target/
+
 
 

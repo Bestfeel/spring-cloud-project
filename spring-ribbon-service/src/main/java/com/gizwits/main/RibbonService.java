@@ -9,17 +9,16 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by feel on 2016/10/23.
  * link: http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-ribbon
+ * curl  http://localhost:9021/add2
  */
-@SpringBootApplication
 @EnableDiscoveryClient
 @EnableCircuitBreaker //  注解开启断路器功能
-@ComponentScan(value = "com.gizwits")
+@SpringBootApplication(scanBasePackages = {"com.gizwits"})
 public class RibbonService {
 
     private static final Logger logger = LoggerFactory.getLogger(RibbonService.class);

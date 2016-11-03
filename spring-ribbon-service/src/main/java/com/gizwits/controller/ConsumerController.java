@@ -23,13 +23,18 @@ public class ConsumerController {
      *
      * @return
      */
-
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add() {
         logger.info("{}", "srping-ribbon-service-add2 method");
         return restTemplate.getForEntity("http://COMPUTE-SERVICE/add?a=10&b=20", String.class).getBody();
     }
 
+    /**
+     * 断路由
+     * curl  http://localhost:9021/add2
+     *
+     * @return
+     */
     @RequestMapping(value = "/add2", method = RequestMethod.GET)
     public String add2() {
         logger.info("{}", "srping-ribbon-service-add Hystrix service method");

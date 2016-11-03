@@ -7,15 +7,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Created by feel on 2016/10/23.
+ * curl  http://localhost:9020/add
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.gizwits"})
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"com.gizwits.controller","com.gizwits.service"})
-@ComponentScan(value = "com.gizwits")
+@EnableFeignClients(basePackages = {"com.gizwits.controller", "com.gizwits.service"})
 public class FeignService {
 
     private static final Logger logger = LoggerFactory.getLogger(FeignService.class);
@@ -26,6 +25,7 @@ public class FeignService {
         //开启监控 http://localhost:8080/health
 
         SpringApplication.run(FeignService.class, args);
+
 
     }
 }

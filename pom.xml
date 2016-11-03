@@ -23,6 +23,8 @@
         <module>spring-cloud-service3</module>
         <module>spring-cloud-sleuth</module>
         <module>spring-cloud-zipkin</module>
+        <module>spring-cloud-hystrixDashboard</module>
+        <module>spring-cloud-turbine</module>
     </modules>
     <name>spring-boot-project</name>
     <url>http://maven.apache.org</url>
@@ -107,10 +109,12 @@
             <version>2.6.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
+
+        <!--api  跟踪-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-zipkin</artifactId>-->
+        <!--</dependency>-->
 
 
         <!--<dependency>-->
@@ -197,6 +201,27 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.10</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <baseImage>frolvlad/alpine-oraclejdk8</baseImage>
+                    <!-- dockerfile 存放的目录，放在resources即可-->
+                    <dockerDirectory>${project.build.outputDirectory}</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+
+
         </plugins>
 
         <!-- maven打包引用静态资源 -->

@@ -24,6 +24,10 @@ spring-cloud-zipkin/target/
 spring-cloud-hystrixDashboard/target/
 spring-cloud-turbine/target/
 spring-cloud-api-gateway/target/
+spring-cloud-zk-client/target
+spring-cloud-zk-core/target
+spring-cloud-zk-service/target
+spring-zk-discovery/target
 
 
 

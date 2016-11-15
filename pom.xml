@@ -25,6 +25,10 @@
         <module>spring-cloud-zipkin</module>
         <module>spring-cloud-hystrixDashboard</module>
         <module>spring-cloud-turbine</module>
+        <module>spring-cloud-zk-service</module>
+        <module>spring-cloud-zk-client</module>
+        <module>spring-cloud-zk-core</module>
+        <module>spring-zk-discovery</module>
     </modules>
     <name>spring-boot-project</name>
     <url>http://maven.apache.org</url>
@@ -157,6 +161,7 @@
             <!--<scope>import</scope>-->
             <!--</dependency>-->
 
+            <!--spring cloud   相关依赖-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -166,6 +171,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- 使用zk实现服务的注册和发现-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-zookeeper-dependencies</artifactId>
+                <version>1.0.3.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

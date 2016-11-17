@@ -29,6 +29,7 @@
         <module>spring-cloud-zk-client</module>
         <module>spring-cloud-zk-core</module>
         <module>spring-zk-discovery</module>
+        <module>spring-cloud-admin</module>
     </modules>
     <name>spring-boot-project</name>
     <url>http://maven.apache.org</url>
@@ -112,24 +113,18 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.6.0</version>
         </dependency>
+        <!--JMX-bean管理-->
+
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
+        </dependency>
 
 
         <!--api  跟踪-->
         <!--<dependency>-->
         <!--<groupId>org.springframework.cloud</groupId>-->
         <!--<artifactId>spring-cloud-starter-zipkin</artifactId>-->
-        <!--</dependency>-->
-
-
-        <!--<dependency>-->
-        <!--<groupId>de.codecentric</groupId>-->
-        <!--<artifactId>spring-boot-admin-server</artifactId>-->
-        <!--<version>1.4.3</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>de.codecentric</groupId>-->
-        <!--<artifactId>spring-boot-admin-server-ui</artifactId>-->
-        <!--<version>1.4.3</version>-->
         <!--</dependency>-->
 
 
@@ -188,34 +183,27 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <!--<configuration>-->
-                <!--<source>${java.version}</source>-->
-                <!--<target>${java.version}</target>-->
-                <!--<encoding>${project.build.sourceEncoding}</encoding>-->
-                <!--</configuration>-->
-                <!--<version>${compiler.version}</version>-->
-            </plugin>
+
+
+            <!--<plugin>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--<version>${spring-boot.version}</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<goals>-->
+            <!--<goal>repackage</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.0.2</version>
             </plugin>
 
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
 
             <plugin>
                 <groupId>com.spotify</groupId>

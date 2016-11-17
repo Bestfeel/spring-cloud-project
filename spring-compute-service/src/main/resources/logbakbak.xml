@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <jmxConfigurator/>
+</configuration>
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<configuration>-->
+        <!--<property name="LOG_HOME" value="logs"/>-->
+        <!--&lt;!&ndash; 输出日志到控制台 &ndash;&gt;-->
+        <!--<appender-->
+        <!--name="STDOUT"-->
+        <!--class="ch.qos.logback.core.ConsoleAppender">-->
+        <!--<encoder>-->
+        <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--</appender>-->
+
+        <!--&lt;!&ndash; 可让每天产生一个日志文件，最多 30 个，自动回滚 &ndash;&gt;-->
+        <!--<appender name="rollingFile"-->
+        <!--class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+        <!--<fileNamePattern>spring.%d{yyyy-MM-dd}.log</fileNamePattern>-->
+        <!--<maxHistory>30</maxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder charset="UTF-8">-->
+        <!--<pattern>%date{yyyy-MMM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--</appender>-->
+
+
+        <!--<root level="info">-->
+        <!--&lt;!&ndash;控制台输出&ndash;&gt;-->
+        <!--<appender-ref ref="STDOUT"/>-->
+        <!--&lt;!&ndash;<appender-ref ref="rollingFile"/>&ndash;&gt;-->
+        <!--</root>-->
+        <!--&lt;!&ndash;设置我们项目的日志级别为INFO&ndash;&gt;-->
+        <!--<logger name="com.gizwits" level="INFO" additivity="false">-->
+        <!--<appender-ref ref="STDOUT"/>-->
+        <!--&lt;!&ndash;<appender-ref ref="rollingFile"/>&ndash;&gt;-->
+        <!--</logger>-->
+        <!--&lt;!&ndash;设置 apache 的日志为ERROR&ndash;&gt;-->
+        <!--<logger name="org.apache">-->
+        <!--<level value="ERROR"/>-->
+        <!--</logger>-->
+        <!--</configuration>-->
